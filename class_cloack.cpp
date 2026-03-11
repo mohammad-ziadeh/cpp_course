@@ -29,7 +29,9 @@ public:
 
 int main()
 {
+// when u define a class it will be called obj
 
+	
 	std::cout<<"Hello World";
 
 	return 0;
