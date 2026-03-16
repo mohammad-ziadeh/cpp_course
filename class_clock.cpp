@@ -19,7 +19,7 @@ class Clock {
 public:
 	void setTime(const int, const int,const int);
 	// the const here mean that the vlaues of the class will not be changed
-	void printTime();
+	void printTime() const;
 	void incHr();
 	void incMin();
 	void incSec();
@@ -33,7 +33,7 @@ void Clock::setTime(const int x, const int y, const int z){
     sec = z;
 }
 
-void Clock::printTime(){
+void Clock::printTime() const{
     cout << hr << ':' << min << ':' << sec;
 }
 
