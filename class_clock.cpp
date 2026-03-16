@@ -27,14 +27,23 @@ public:
 
 };
 
-void Clock::setTime(const int x, const int y, const int z){
-    hr = x;
-    min = y;
-    sec = z;
+void Clock::setTime(const int x, const int y, const int z) {
+	hr = x;
+	min = y;
+	sec = z;
 }
 
-void Clock::printTime() const{
-    cout << hr << ':' << min << ':' << sec;
+void Clock::printTime() const {
+	if (hr < 10)
+		cout << '0';
+	cout << hr << ':';
+	if (min < 10)
+		cout << '0';
+	cout << min << ':';
+	if (sec < 10)
+		cout << '0';
+	cout << sec;
+
 }
 
 
@@ -45,8 +54,8 @@ int main()
 
 	Clock c1;
 	Clock c2;
-	
-	c1.setTime(20,30,50);
+
+	c1.setTime(20,3,2);
 
 	c1.printTime();
 
