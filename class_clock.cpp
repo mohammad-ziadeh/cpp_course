@@ -17,13 +17,24 @@ class Clock {
 
 
 public:
-	void setTime(const int&, const int&,const int&);
+	void setTime(const int, const int,const int);
+	// the const here mean that the vlaues of the class will not be changed
 	void printTime();
 	void incHr();
 	void incMin();
 	void incSec();
 	bool compare();
 
+};
+
+void Clock::setTime(const int x, const int y, const int z){
+    hr = x;
+    min = y;
+    sec = z;
+}
+
+void Clock::printTime(){
+    cout << hr << ':' << min << ':' << sec;
 }
 
 
@@ -31,8 +42,13 @@ int main()
 {
 // when u define a class it will be called obj
 
+
+	Clock c1;
+	Clock c2;
 	
-	std::cout<<"Hello World";
+	c1.setTime(20,30,50);
+
+	c1.printTime();
 
 	return 0;
 }
