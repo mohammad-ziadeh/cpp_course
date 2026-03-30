@@ -10,14 +10,17 @@ Write your code in this editor and press "Run" button to compile and execute it.
 using namespace std;
 
 class Clock {
-    
+
 	// already private
-	int sec;
+	int sec = 0;
 	int min;
 	int hr;
 
 
 public:
+	// this is the construter
+	Clock();
+	Clock(int,int,int);
 	void setTime(const int, const int,const int);
 	// the const here mean that the vlaues of the class will not be changed
 	void printTime() const;
@@ -27,6 +30,26 @@ public:
 	bool equalTime(const Clock&) const;
 
 };
+
+//
+// ############## DEFULT CONSTRUCTOR
+//
+
+Clock::Clock() {
+	hr = 0;
+	min = 0;
+	sec = 0;
+}
+
+//
+// ##############
+//
+
+Clock::Clock(int x, int y, int z) {
+	hr = x;
+	min = y;
+	sec = z;
+}
 
 //
 // ##############
@@ -70,6 +93,7 @@ void Clock::incHr() {
 		hr = 0;
 		return;
 	}
+	// else if its not 23
 	hr++;
 }
 // ------ min
@@ -119,6 +143,13 @@ int main()
 
 	Clock c1;
 	Clock c2;
+
+
+	// u can do arr of class
+    // 	Clock arr[6];
+    // 	arr[0].setTime(2,3,4);
+
+
 	int hour, min, sec;
 	hour = 23;
 	min= 59;
@@ -148,7 +179,3 @@ int main()
 
 	return 0;
 }
-
-
-
-
