@@ -18,18 +18,37 @@ class Clock {
 
 
 public:
+
+
 	// this is the construter
 	Clock();
 	Clock(int,int,int);
-	void setTime(const int, const int,const int);
-	// the const here mean that the vlaues of the class will not be changed
+	//
+	static int id; // this will create an id that is assigned to the class  
+	void setTime(const int, const int,const int); 	// the const here mean that the vlaues of the class will not be changed
 	void printTime() const;
 	void incHr();
 	void incMin();
 	void incSec();
 	bool equalTime(const Clock&) const;
+	// deconstucter
+	~Clock();
 
 };
+
+//
+// ############## DECLARING THE STATIC VALUE IN MEMMMORY
+//
+
+int Clock::id = 5;
+
+//
+// ############## DECONSTRUCTOR
+//
+
+Clock::~Clock() {
+	return;
+}
 
 //
 // ############## DEFULT CONSTRUCTOR
@@ -141,32 +160,28 @@ int main()
 // when u define a class it will be called obj
 
 
-	Clock c1;
+	Clock c1; // this will create and obj called c1
 	Clock c2;
 
 
 	// u can do arr of class
-    // 	Clock arr[6];
-    // 	arr[0].setTime(2,3,4);
+	// 	Clock arr[6];
+	// 	arr[0].setTime(2,3,4);
 
 
-	int hour, min, sec;
-	hour = 23;
-	min= 59;
-	sec = 59;
+// 	int hour, min, sec;
+// 	hour = 23;
+// 	min= 59;
+// 	sec = 59;
+// 	c1.setTime(hour,min,sec);
+// 	c2.setTime(hour,min,sec);
+// 	c1.printTime();
+// 	cout << endl;
+// 	cout << c1.equalTime(c2);
+//
 
-
-	c1.setTime(hour,min,sec);
-	c2.setTime(hour,min,sec);
-
-	c1.printTime();
-
-	cout << endl;
-
-
-	cout << c1.equalTime(c2);
-
-
+c1.id++;
+cout << c1.id << endl << c2.id;
 
 
 
@@ -179,3 +194,9 @@ int main()
 
 	return 0;
 }
+
+
+
+
+
+
