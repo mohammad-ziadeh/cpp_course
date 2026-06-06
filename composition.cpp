@@ -19,7 +19,7 @@ class Address {
         Address(int,int);
 };
 
-// construct for the main class
+// construct for class
 Address::Address(int x, int y){
     streetNum = x;
     buildingNum = y;
@@ -39,7 +39,7 @@ class Student{
         Student(int , int , string , int);
 };     
 
-// construct for the derived class
+// construct for the compositioned class
 Student::Student(int x, int y, string z, int w) : StAddress(x,y){
     id = w;
     name = z;
