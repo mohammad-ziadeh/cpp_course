@@ -1,5 +1,3 @@
-// محمد عماد زياده
-// 3240615
 
 #include <iostream>
 using namespace std;
